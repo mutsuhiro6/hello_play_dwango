@@ -16,4 +16,16 @@ class HelloController @Inject()(cc: ControllerComponents) extends AbstractContro
       }
   }
 
+  def plus(a: Option[Int], b: Option[Int]) = Action {
+    implicit request: Request[AnyContent] =>
+      Ok {
+        if (a.isEmpty || b.isEmpty) {
+          "Please give arguments of a and b."
+        }
+        else {
+          (a.get + b.get).toString
+        }
+      }
+  }
+
 }
