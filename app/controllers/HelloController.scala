@@ -27,7 +27,7 @@ class HelloController @Inject()(cc: ControllerComponents) extends AbstractContro
     implicit request: Request[AnyContent] =>
       Ok {
         if (a.isEmpty || b.isEmpty) {
-          Messages("noQuery4Hello")
+          Messages("noQuery4Plus")
         }
         else {
           (a.get + b.get).toString
