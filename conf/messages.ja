@@ -1,2 +1,3 @@
 hello = こんにちは、{0}さん。
-noQuery = nameにパラメータを渡してください。（例：太郎）
+noQuery4Get = nameにパラメータを渡してください。（例：太郎）
+noQuery4Plus = aとbに整数のパラメータを渡してください。

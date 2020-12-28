@@ -19,7 +19,7 @@ class HelloController @Inject()(cc: ControllerComponents) extends AbstractContro
       Ok {
         name
           .map(s => Messages("hello", s))
-          .getOrElse(Messages("noQuery"))
+          .getOrElse(Messages("noQuery4Get"))
       }
   }
 
@@ -27,7 +27,7 @@ class HelloController @Inject()(cc: ControllerComponents) extends AbstractContro
     implicit request: Request[AnyContent] =>
       Ok {
         if (a.isEmpty || b.isEmpty) {
-          Messages("noQuery")
+          Messages("noQuery4Hello")
         }
         else {
           (a.get + b.get).toString

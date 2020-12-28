@@ -1,2 +1,3 @@
 hello = Hello, {0}!
-noQuery = Please give a name as a query parameter named "name".
+noQuery4Get = Please give a name as a query parameter named "name".
+noQuery4Plus = Please give both of integers as query parameters named "a" and "b".
