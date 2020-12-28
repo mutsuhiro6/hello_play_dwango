@@ -14,8 +14,11 @@ import javax.inject.{Inject, Singleton}
 @Singleton
 class HelloController @Inject()(cc: ControllerComponents) extends AbstractController(cc) with I18nSupport {
 
+  val logger = play.api.Logger("hello")
+
   def get(name: Option[String]) = Action {
     implicit request: Request[AnyContent] =>
+      logger.info(s"name parameter: $name")
       Ok {
         name
           .map(s => Messages("hello", s))
@@ -25,6 +28,7 @@ class HelloController @Inject()(cc: ControllerComponents) extends AbstractContro
 
   def plus(a: Option[Int], b: Option[Int]) = Action {
     implicit request: Request[AnyContent] =>
+      logger.info(s"parameters: a=$a, b=$b")
       Ok {
         if (a.isEmpty || b.isEmpty) {
           Messages("noQuery4Plus")
